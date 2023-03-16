@@ -1,0 +1,11 @@
+{
+    "family":"news-app-dash",
+    "cpu": ".5vCPUs",
+    "memory": 512,
+    "containerDefinitions": [
+      {
+        "name": "dash-api-container",
+        "essential": true
+      }
+    ]
+  }
