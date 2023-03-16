@@ -1,6 +1,6 @@
 {
     "family":"news-app-dash",
-    "cpu": ".5 vCPUs",
+    "cpu": "1024",
     "memory": "512",
     "containerDefinitions": [
       {
