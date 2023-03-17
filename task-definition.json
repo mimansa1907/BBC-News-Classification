@@ -1,23 +1,85 @@
 {
-  "family":"dash-app",
-  "cpu": 1024,
-  "memory": 512,
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:038612308577:task-definition/news-dash-app:1",
   "containerDefinitions": [
-    {
-      "name": "dash-api-container",
-      "essential": true,
-      "portMappings": [
-        {
-          "containerPort": 8050, 
-          "hostPort": 8050
-        }
-      ]
-    }
+      {
+          "name": "news-dash-api",
+          "image": "038612308577.dkr.ecr.ap-south-1.amazonaws.com/newsapp:latest",
+          "cpu": 0,
+          "portMappings": [
+              {
+                  "name": "news-dash-api-8050-tcp",
+                  "containerPort": 8050,
+                  "hostPort": 8050,
+                  "protocol": "tcp"
+              }
+          ],
+          "essential": true,
+          "environment": [],
+          "environmentFiles": [],
+          "mountPoints": [],
+          "volumesFrom": [],
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-create-group": "true",
+                  "awslogs-group": "/ecs/news-dash-app",
+                  "awslogs-region": "ap-south-1",
+                  "awslogs-stream-prefix": "ecs"
+              }
+          }
+      }
   ],
+  "family": "news-dash-app",
+  "taskRoleArn": "arn:aws:iam::038612308577:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::038612308577:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "revision": 1,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+      {
+          "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+      },
+      {
+          "name": "ecs.capability.execution-role-awslogs"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.ecr-auth"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.task-iam-role"
+      },
+      {
+          "name": "ecs.capability.execution-role-ecr-pull"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+      },
+      {
+          "name": "ecs.capability.task-eni"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+      }
+  ],
+  "placementConstraints": [],
   "compatibilities": [
-    "FARGATE",
-    "EC2",
-    "EXTERNAL"
-  ],  
-  "executionRoleArn": "arn:aws:iam::038612308577:role/ecsTaskExecutionRole"
+      "EC2",
+      "FARGATE"
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "1024",
+  "memory": "2048",
+  "runtimePlatform": {
+      "cpuArchitecture": "X86_64",
+      "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2023-03-17T12:16:08.948Z",
+  "registeredBy": "arn:aws:iam::038612308577:root",
+  "tags": []
 }
