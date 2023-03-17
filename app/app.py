@@ -40,7 +40,7 @@ def predict_class(input_text):
         article_class = predict_text_class(input_text)
         return 'The given new report belong to {} section.'.format(article_class)
     else:
-        return None
+        return 'No text entered'
 
 if __name__ == "__main__":
     # app.run_server(debug=True)
