@@ -1,18 +1,23 @@
 {
-    "family":"news-app-dash",
-    "cpu": "1024",
-    "memory": "512",
-    "containerDefinitions": [
-      {
-        "name": "dash-api-container",
-        "essential": true,
-        "portMappings": [
-          {
-            "containerPort": 8050, 
-            "hostPort": 8050
-          }
-        ]
-      }
-    ],
-    "executionRoleArn": "arn:aws:iam::038612308577:role/ecsTaskExecutionRole"
-  }
+  "family":"dash-app",
+  "cpu": "1024",
+  "memory": "512",
+  "containerDefinitions": [
+    {
+      "name": "dash-container",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 8050, 
+          "hostPort": 8050
+        }
+      ]
+    }
+  ],
+  "compatibilities": [
+    "FARGATE",
+    "EC2",
+    "EXTERNAL"
+  ],  
+  "executionRoleArn": "arn:aws:iam::038612308577:role/ecsTaskExecutionRole"
+}
