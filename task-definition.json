@@ -4,7 +4,7 @@
   "memory": "512",
   "containerDefinitions": [
     {
-      "name": "dash-container",
+      "name": "dash-api-container",
       "essential": true,
       "portMappings": [
         {
