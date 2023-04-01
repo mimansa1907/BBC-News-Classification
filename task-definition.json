@@ -13,16 +13,7 @@
       }
     ],
     "memory": "512",
-    "taskRoleArn": "arn:aws:iam::495535391012:role/ecs_task_role",
-    "compatibilities": [
-      "EXTERNAL",
-      "EC2"
-    ],
-    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:495535391012:task-definition/dash-task:1",
     "family": "dash-task",
-    "requiresCompatibilities": [
-      "EC2"
-    ],
     "cpu": "512",
     "revision": 1,
     "status": "ACTIVE"
