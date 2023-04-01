@@ -16,5 +16,6 @@
     "family": "dash-task",
     "cpu": "512",
     "revision": 1,
-    "status": "ACTIVE"
+    "status": "ACTIVE",
+    "executionRoleArn": "arn:aws:iam::495535391012:role/ecs_task_role"
 }
